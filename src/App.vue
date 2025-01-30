@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+      <heade />
+      <home />
+      <about />
+      <service />
+      <room />
+      <other />
+      <contact />
+      <foote />
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import heade from '@/components/header-page.vue'
+import home from '@/components/home-page.vue'
+import about from '@/components/about-page.vue'
+import service from '@/components/service-page.vue'
+import room from '@/components/room-page.vue'
+import other from '@/components/other-comps.vue'
+import contact from '@/components/contact-page.vue'
+import foote from '@/components/footer-page.vue'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
 
+  components: {
+  heade,home,about,service,room,other,contact,foote
+  },
+
+  data: () => ({
+    //
+  }),
+  mounted(){
+ 
+  },created(){
+    this.$store.commit('get');
+    this.$store.commit('fetchImages');
+  }
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+.x{
+  margin: 0;
 }
 </style>
